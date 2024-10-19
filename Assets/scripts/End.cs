@@ -8,14 +8,13 @@ public class End : MonoBehaviour
     // Start is called before the first frame update
     public Drag drag;
 
-    public string sceneFrom;
-    public string sceneTo;
+    public GameObject credits;
 
     private void Update()
     {
         if (drag.isFinished)
         {
-            TransitionManager.Instance.Transition(sceneFrom, sceneTo);
+            credits.SetActive(true);
         }
     }
 }

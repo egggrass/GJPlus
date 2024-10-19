@@ -9,9 +9,8 @@ public class PlayAniShock : MonoBehaviour
    
     public Drag drag;
     public bool playAni;
-    public string sceneFrom;
-    public string sceneTo;
-
+    public GameObject next;
+    public GameObject hide;
     
     // Start is called before the first frame update
     void Start()
@@ -33,11 +32,15 @@ public class PlayAniShock : MonoBehaviour
     {
         
         play.SetTrigger("shock");
-
-        yield return new WaitForSeconds(3f);
-        Debug.Log("finished");
+        hide.gameObject.SetActive(false);
+        next.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+       
+       
+       
+       
         
-        TransitionManager.Instance.Transition(sceneFrom, sceneTo);
+      
 
     }
 

@@ -25,20 +25,13 @@ public class PlayAni : MonoBehaviour
     {
         if(drag.isFinished)
         {
-            StartCoroutine(PlayAnimation());
-          
+            play.SetTrigger("move");
+         
+
+            TransitionManager.Instance.Transition(sceneFrom, sceneTo);
+
         }
     }
 
-    IEnumerator PlayAnimation()
-    {
-
-        play.SetTrigger("move");
-        yield return new WaitForSeconds(3f);
-       
-        obj.SetActive(false);
-        TransitionManager.Instance.Transition(sceneFrom, sceneTo);
-
-    }
 
 }
