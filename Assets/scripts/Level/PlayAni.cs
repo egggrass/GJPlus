@@ -9,6 +9,8 @@ public class PlayAni : MonoBehaviour
    
     public Drag drag;
     public bool playAni;
+    public string sceneFrom;
+    public string sceneTo;
 
     public GameObject obj;
    
@@ -32,9 +34,10 @@ public class PlayAni : MonoBehaviour
     {
 
         play.SetTrigger("move");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         Debug.Log("finished");
         obj.SetActive(false);
+        TransitionManager.Instance.Transition(sceneFrom, sceneTo);
 
     }
 
