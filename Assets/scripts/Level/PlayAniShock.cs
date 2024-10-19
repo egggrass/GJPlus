@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class PlayAni : MonoBehaviour
+public class PlayAniShock : MonoBehaviour
 {
     public Animator play;
    
@@ -12,8 +12,7 @@ public class PlayAni : MonoBehaviour
     public string sceneFrom;
     public string sceneTo;
 
-    public GameObject obj;
-   
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +31,12 @@ public class PlayAni : MonoBehaviour
 
     IEnumerator PlayAnimation()
     {
+        
+        play.SetTrigger("shock");
 
-        play.SetTrigger("move");
         yield return new WaitForSeconds(3f);
-       
-        obj.SetActive(false);
+        Debug.Log("finished");
+        
         TransitionManager.Instance.Transition(sceneFrom, sceneTo);
 
     }
