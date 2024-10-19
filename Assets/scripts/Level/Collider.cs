@@ -8,6 +8,8 @@ public class Collider : MonoBehaviour
 {
     public GameObject cutpiece;
     public bool cutFinished = false;
+    public string scenceFrom;
+    public string scenceTo;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,9 @@ public class Collider : MonoBehaviour
         
             cutpiece.SetActive(false);
         cutFinished = true;
-        Debug.Log("finished");
+
+        TransitionManager.Instance.Transition(scenceFrom,scenceTo);
+        
     }
 
 
