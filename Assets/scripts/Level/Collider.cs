@@ -26,7 +26,7 @@ public class Collider : MonoBehaviour
         
             cutpiece.SetActive(false);
         cutFinished = true;
-        Debug.Log("cut");
+        Debug.Log("finished");
     }
 
 
