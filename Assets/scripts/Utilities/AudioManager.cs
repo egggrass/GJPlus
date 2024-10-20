@@ -21,4 +21,11 @@ public class AudioManager : MonoBehaviour
     {
         audioS.PlayOneShot(clip);
     }
+
+    public void StopAudio( )
+    {
+
+        audioS.Stop();
+       
+    }
 }

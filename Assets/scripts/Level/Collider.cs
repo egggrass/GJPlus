@@ -12,17 +12,21 @@ public class Collider : MonoBehaviour
     public string scenceFrom;
     public string scenceTo;
     public GameObject ball;
-    // Start is called before the first frame update
-   
+    public GameObject ballin;
+    
+
+
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Deactivate GameObject "C" when colliding with anything
+      
 
         drag.isFinished = true;
         ball.SetActive(false);
+        ballin.SetActive(true);
         TransitionManager.Instance.Transition(scenceFrom,scenceTo);
-        
+       
+
     }
 
 

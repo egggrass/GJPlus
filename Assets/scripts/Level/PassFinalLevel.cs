@@ -9,9 +9,13 @@ public class PassFinalLevel : MonoBehaviour
     public GameObject obj1;
     public GameObject obj2;
     public GameObject objFinal;
-  
+    public AudioClip coffee;
     // Start is called before the first frame update
-    
+
+    public void Start()
+    {
+        AudioManager.instance.AudioPlay(coffee);
+    }
 
     // Update is called once per frame
     void Update()

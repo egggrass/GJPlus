@@ -11,11 +11,14 @@ public class PlayAniShock : MonoBehaviour
     public bool playAni;
     public GameObject next;
     public GameObject hide;
-    
+    public GameObject catwalk;
+    public AudioClip city;
+   
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.instance.AudioPlay(city);
     }
 
     // Update is called once per frame
@@ -23,24 +26,24 @@ public class PlayAniShock : MonoBehaviour
     {
         if(drag.isFinished)
         {
-            StartCoroutine(PlayAnimation());
+          PlayAnimation();
           
         }
     }
 
-    IEnumerator PlayAnimation()
+    public void PlayAnimation()
     {
         
         play.SetTrigger("shock");
         hide.gameObject.SetActive(false);
         next.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
        
        
-       
-       
+        catwalk.SetActive(true);
         
-      
+        AudioManager.instance.StopAudio();
+
+
 
     }
 
