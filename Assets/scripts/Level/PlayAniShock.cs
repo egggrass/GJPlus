@@ -13,6 +13,7 @@ public class PlayAniShock : MonoBehaviour
     public GameObject hide;
     public GameObject catwalk;
     public AudioClip city;
+    public AudioClip catshock;
    
 
     // Start is called before the first frame update
@@ -35,16 +36,20 @@ public class PlayAniShock : MonoBehaviour
     {
         
         play.SetTrigger("shock");
+        AudioManager.instance.AudioPlay(catshock);
         hide.gameObject.SetActive(false);
         next.gameObject.SetActive(true);
        
        
         catwalk.SetActive(true);
         
+       
+
+    }
+
+    public void MusicStop()
+    {
         AudioManager.instance.StopAudio();
-
-
-
     }
 
 }

@@ -31,4 +31,9 @@ public class PassFinalLevel : MonoBehaviour
 
 
     }
+
+    public void MusicStop()
+    {
+        AudioManager.instance.StopAudio();
+    }
 }

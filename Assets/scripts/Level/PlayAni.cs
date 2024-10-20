@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.ShaderData;
+
 
 public class PlayAni : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class PlayAni : MonoBehaviour
     public bool playAni;
     public string sceneFrom;
     public string sceneTo;
-    public AudioClip walk;
+   
 
     public GameObject obj;
    
@@ -27,8 +27,9 @@ public class PlayAni : MonoBehaviour
     {
         if(drag.isFinished)
         {
+           
             play.SetTrigger("move");
-            AudioManager.instance.AudioPlay(walk);
+           
 
             TransitionManager.Instance.Transition(sceneFrom, sceneTo);
 

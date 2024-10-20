@@ -11,14 +11,16 @@ public class End : MonoBehaviour
     public GameObject bigcat;
     public GameObject smallcat;
     public AudioClip ring;
+    public bool isFished;
 
     private void Update()
     {
-        if (drag.isFinished)
+        if (drag.isFinished && !isFished)
         {
             bigcat.SetActive(true);
             smallcat.SetActive(false);
             AudioManager.instance.AudioPlay(ring);
+            isFished = true;
         }
     }
 }
